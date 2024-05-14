@@ -45,7 +45,7 @@ app.post('/ask', async (req, res) => {
     const { question } = req.body;
     
     if (!question) {
-        return res.status(400).json({ error: 'Question is required' });
+        return res.status(400).json({ error: 'Pergunta é um campo obrigatorio' });
     }
 
     try {
@@ -71,15 +71,22 @@ app.post('/ask', async (req, res) => {
             }
         });
 
+        const messageResponse = response.data.choices[0].message;
+
+        const messageContent = {
+            "role": "user",
+            "content": question
+        };
+
         const answer = response.data.choices[0].message.content;
 
         // Armazenar a pergunta e a resposta no log
-        questionsLog.push({ question, answer });
+        questionsLog.push({ messageContent, messageResponse });
 
         res.json({ question, answer });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Failed to communicate with OpenAI API' });
+        res.status(500).json({ error: 'Falha ao se comunicar com  OpenAI API' });
     }
 });
 
