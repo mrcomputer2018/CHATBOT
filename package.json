@@ -13,7 +13,9 @@
     "nodemon": "^3.1.0"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "openai": "^4.47.1"
   }
 }
