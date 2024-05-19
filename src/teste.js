@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
+const banco = require('./banco/banco.js');
 
 const treinamento = `
 Você é um chatbot de um restaurante de comida italiana.
@@ -48,6 +49,14 @@ app.post('/ask', async (req, res) => {
         return res.status(400).json({ error: 'Pergunta é um campo obrigatorio' });
     }
 
+    const banco = banco.db.push({
+        historico: []
+    });
+
+    banco.historico.push(
+        "user: " + question
+    )
+
     try {
         const response = await axios.post('https://api.openai.com/v1/chat/completions', 
             {
@@ -58,7 +67,7 @@ app.post('/ask', async (req, res) => {
                     },
                     {
                         "role": "system",
-                        "content": "histoico de conversas:" + questionsLog
+                        "content": "histoico de conversas:" + banco.historico
                     },
                     {
                         "role": "user",
@@ -67,7 +76,8 @@ app.post('/ask', async (req, res) => {
                 ]
         }, {
             headers: {
-                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                'Content-Type': 'application/json'
             }
         });
 
