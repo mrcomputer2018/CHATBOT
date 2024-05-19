@@ -83,15 +83,9 @@ app.post('/ask', async (req, res) => {
 
         const messageResponse = response.data.choices[0].message;
 
-        const messageContent = {
-            "role": "user",
-            "content": question
-        };
+        banco.historico.push("assistent: " + response.data.choices[0].message.content);
 
         const answer = response.data.choices[0].message.content;
-
-        // Armazenar a pergunta e a resposta no log
-        questionsLog.push({ messageContent, messageResponse });
 
         res.json({ question, answer });
     } catch (error) {
@@ -102,7 +96,7 @@ app.post('/ask', async (req, res) => {
 
 // Endpoint para obter todas as perguntas feitas à API da OpenAI
 app.get('/questions', (req, res) => {
-    res.json(questionsLog);
+    res.json(banco.historico);
 });
 
 app.listen(port, () => {
