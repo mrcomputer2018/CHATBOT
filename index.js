@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
-const banco = require('./banco/banco.js');
+const banco = require('./src/banco/banco.js');
 
 const treinamento = `
 Você é um chatbot de um restaurante de comida italiana.
@@ -49,11 +49,7 @@ app.post('/ask', async (req, res) => {
         return res.status(400).json({ error: 'Pergunta é um campo obrigatorio' });
     }
 
-    const banco = banco.db.push({
-        historico: []
-    });
-
-    banco.historico.push(
+    banco.db.push(
         "user: " + question
     )
 
@@ -67,7 +63,7 @@ app.post('/ask', async (req, res) => {
                     },
                     {
                         "role": "system",
-                        "content": "histoico de conversas:" + banco.historico
+                        "content": "histoico de conversas:" + banco.db
                     },
                     {
                         "role": "user",
@@ -83,7 +79,7 @@ app.post('/ask', async (req, res) => {
 
         const messageResponse = response.data.choices[0].message;
 
-        banco.historico.push("assistent: " + response.data.choices[0].message.content);
+        banco.db.push("assistent: " + response.data.choices[0].message.content);
 
         const answer = response.data.choices[0].message.content;
 
@@ -96,7 +92,7 @@ app.post('/ask', async (req, res) => {
 
 // Endpoint para obter todas as perguntas feitas à API da OpenAI
 app.get('/questions', (req, res) => {
-    res.json(banco.historico);
+    res.json(banco.db);
 });
 
 app.listen(port, () => {
