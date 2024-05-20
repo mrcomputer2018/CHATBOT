@@ -39,8 +39,6 @@ const port = 3000;
 
 app.use(express.json());
 
-let questionsLog = [];
-
 // Endpoint para fazer perguntas à API da OpenAI
 app.post('/ask', async (req, res) => {
     const { question } = req.body;
@@ -76,8 +74,6 @@ app.post('/ask', async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
-
-        const messageResponse = response.data.choices[0].message;
 
         banco.db.push("assistent: " + response.data.choices[0].message.content);
 
