@@ -79,6 +79,10 @@ Api chatbot alimentada por inteligência artificial (IA) podem lidar com consult
     Dotenv
 </a> &#xa0; &#xa0;
 
+<a href="https://github.com/iuricode/padroes-de-commits">
+    Padrões de Commit
+</a> &#xa0; &#xa0;
+
 ## :white_check_mark: Pre-requesitos ##
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
