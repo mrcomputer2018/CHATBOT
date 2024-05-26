@@ -67,15 +67,15 @@ Api chatbot alimentada por inteligência artificial (IA) podem lidar com consult
     ExpressJS
 </a> &#xa0; &#xa0;
 
-<a href="https://expressjs.com/pt-br/">
+<a href="https://www.npmjs.com/package/nodemon">
     Nodemon
 </a> &#xa0; &#xa0;
 
-<a href="https://expressjs.com/pt-br/">
+<a href="https://axios-http.com/">
     Axios
 </a> &#xa0; &#xa0;
 
-<a href="https://expressjs.com/pt-br/">
+<a href="https://www.npmjs.com/package/dotenv">
     Dotenv
 </a> &#xa0; &#xa0;
 
