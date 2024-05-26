@@ -1,5 +1,5 @@
 <div align="center" id="top">
-  <img src="" width="900" alt="Chatbot + OpenAI API" />
+  <img src="./src/image/chatbot.png" width="900" alt="Chatbot + OpenAI API" />
 
 <div align="center">
   <h1>API Chatbot + OpenAI API</h1>
