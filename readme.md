@@ -67,4 +67,55 @@ Api chatbot alimentada por inteligência artificial (IA) podem lidar com consult
     ExpressJS
 </a> &#xa0; &#xa0;
 
-###
+<a href="https://expressjs.com/pt-br/">
+    Nodemon
+</a> &#xa0; &#xa0;
+
+<a href="https://expressjs.com/pt-br/">
+    Axios
+</a> &#xa0; &#xa0;
+
+<a href="https://expressjs.com/pt-br/">
+    Dotenv
+</a> &#xa0; &#xa0;
+
+## :white_check_mark: Pre-requesitos ##
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+## :checkered_flag: Rodando o chatbot ##
+
+```bash
+# Clone este projeto
+$ git clone https://github.com/mrcomputer2018/CHATBOTTCC
+
+# Acesse
+$ cd CHATBOT
+
+# Instale dependencias
+$ npm install
+
+# Rode o projeto
+$ npm start
+
+```
+
+## :video_game: Scripts
+
+- `start`: starts the application at `localhost:3000`;
+
+## :memo: Licenças ##
+
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
+
+<p align="right">(<a href="#top">Voltar ao inicio</a>)</p>
+
+
+Made with :heart: by <a href="https://github.com/mrcomputer2018" target="_blank">Marcelo Ribeiro</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
+
