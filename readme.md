@@ -100,6 +100,8 @@ $ npm install
 # Rode o projeto
 $ npm start
 
+#Agora, você pode fazer requisições POST para http://localhost:3000/ask com o corpo JSON contendo a pergunta, e requisições GET para http://localhost:3000/questions para obter todas as perguntas feitas.
+
 ```
 
 ## :video_game: Scripts
